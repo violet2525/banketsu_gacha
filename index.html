@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script>
+/*      window.onload = function(){
+          sekirei();
+          //start();
+        document.getElementById("load").onclick = function(){
+          //window.alert("click!!!");
+        }
+      }
+*/
+      const canvas_w = 960;
+      const canvas_h = 540;
+      let w_flg = '';
+
+    window.addEventListener('load', load, false);
+    
+    function load(){
+      start();
+      //document.getElementById('cvs').addEventListener('click', senni, false);
+    var cv = document.getElementById('cvs');
+     cv.addEventListener('mouseup',function(e){
+        senni(cv, e);
+      }, false);
+    }
+    
+    //‰ζ–Κ‘JΪ
+    function senni(cv, e){
+      const cv_pos = cv.getBoundingClientRect();
+      const mX = e.pageX - cv_pos.left;
+      const mY = e.pageY - cv_pos.top;
+      if(w_flg == 'start'){
+        //ƒXƒ^[ƒg‰ζ–Κ¨κTιχ‘δ‘I‘π
+        if(mX >= 310 && mX <= 750 && mY >= 365 && mY <= 460){
+          sekirei();
+        }else{
+          window.alert(mX + ', ' + mY);
+        }
+      }else if(w_flg == 'sekirei'){
+        if (true){
+          //κTιχ‘δ¨_‘γκTιχ‘δ
+        }else if(true){
+          //κTιχ‘δ¨χ‘γκTιχ‘δ
+        }
+        start();    
+      }
+    }
+
+      //START
+      function start(){
+        w_flg = 'start';
+        var cv = document.getElementById("cvs");
+        cv.setAttribute("width",canvas_w);
+        cv.setAttribute("height",canvas_h);
+        var cn = cv.getContext("2d");
+        var img = new Image();
+        img.src = "https://doc-00-0c-docs.googleusercontent.com/docs/securesc/29nq559d8duo66e3qqtlvi6t5c3ipsbn/es5eiu7agi4pl9g2em3e0s95mbij5gne/1499860800000/10412770286022561160/10412770286022561160/0B_RUZ_LMQGUTQW05R2x3WXRCWkE?"
+        img.onload = function(){
+          cn.drawImage(img,0,0,canvas_w*2,canvas_h*2,0,0,canvas_w,canvas_h);
+        }
+      }
+      
+      //κTιχ‘δ‘I‘π
+      function sekirei(){
+        w_flg = 'sekirei';
+        var cv = document.getElementById("cvs");
+        cv.setAttribute("width",canvas_w);
+        cv.setAttribute("height",canvas_h);
+        var cn = cv.getContext("2d");
+        cn.font = "18px '‚l‚r ‚oƒSƒVƒbƒN'"
+        cn.fillText("κTιχ‘δ‘I‘π",100,100);
+      }
+
+    </script>
+    <style>
+      @font-face {
+      font-family: MyFont;
+        src: url('http://drive.google.com/uc?id=0B_RUZ_LMQGUTSWtjbUdKY1k1T1E') format("TrueType");
+      }
+      
+      body{
+        font-family: MyFont, serif;
+      }    
+    </style>
+  </head>
+  <body style="background:#ffff00;">
+    <p id="load" style="font-family: MyFont, serif;">
+    ‚Ν‚λ[‚ν[‚ι‚Η
+    </p>
+<canvas id="cvs">ƒLƒƒƒ“ƒoƒX</canvas>
+<!--
+//          src: url('https://cldup.com/suPs57RV6l.ttf') format("TrueType");
+//        src: url('https://dl.dropboxusercontent.com/s/ehsz0t6dgq01bt5/yojo.ttf') format("Truetype");
+  <img src="https://doc-00-0c-docs.googleusercontent.com/docs/securesc/29nq559d8duo66e3qqtlvi6t5c3ipsbn/es5eiu7agi4pl9g2em3e0s95mbij5gne/1499860800000/10412770286022561160/10412770286022561160/0B_RUZ_LMQGUTQW05R2x3WXRCWkE?" />
+-->
+  </body>
+</html>
+
+
