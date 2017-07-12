@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ο»Ώ<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -26,13 +26,13 @@
       }, false);
     }
     
-    //‰ζ–Κ‘JΪ
+    //η”»ιΆι·η§»
     function senni(cv, e){
       const cv_pos = cv.getBoundingClientRect();
       const mX = e.pageX - cv_pos.left;
       const mY = e.pageY - cv_pos.top;
       if(w_flg == 'start'){
-        //ƒXƒ^[ƒg‰ζ–Κ¨κTιχ‘δ‘I‘π
+        //γ‚Ήγ‚ΏγƒΌγƒη”»ιΆβ†’ι¶Ίι΄’ε°ιΈζ
         if(mX >= 310 && mX <= 750 && mY >= 365 && mY <= 460){
           sekirei();
         }else{
@@ -40,9 +40,9 @@
         }
       }else if(w_flg == 'sekirei'){
         if (true){
-          //κTιχ‘δ¨_‘γκTιχ‘δ
+          //ι¶Ίι΄’ε°β†’η¥δ»£ι¶Ίι΄’ε°
         }else if(true){
-          //κTιχ‘δ¨χ‘γκTιχ‘δ
+          //ι¶Ίι΄’ε°β†’ζ΅δ»£ι¶Ίι΄’ε°
         }
         start();    
       }
@@ -62,15 +62,15 @@
         }
       }
       
-      //κTιχ‘δ‘I‘π
+      //ι¶Ίι΄’ε°ιΈζ
       function sekirei(){
         w_flg = 'sekirei';
         var cv = document.getElementById("cvs");
         cv.setAttribute("width",canvas_w);
         cv.setAttribute("height",canvas_h);
         var cn = cv.getContext("2d");
-        cn.font = "18px '‚l‚r ‚oƒSƒVƒbƒN'"
-        cn.fillText("κTιχ‘δ‘I‘π",100,100);
+        cn.font = "18px 'οΌ­οΌ³ οΌ°γ‚΄γ‚·γƒƒγ‚―'"
+        cn.fillText("ι¶Ίι΄’ε°ιΈζ",100,100);
       }
 
     </script>
@@ -87,9 +87,9 @@
   </head>
   <body style="background:#ffff00;">
     <p id="load" style="font-family: MyFont, serif;">
-    ‚Ν‚λ[‚ν[‚ι‚Η
+    γ―γ‚γƒΌγ‚γƒΌγ‚‹γ©
     </p>
-<canvas id="cvs">ƒLƒƒƒ“ƒoƒX</canvas>
+<canvas id="cvs">γ‚­γƒ£γƒ³γƒγ‚Ή</canvas>
 <!--
 //          src: url('https://cldup.com/suPs57RV6l.ttf') format("TrueType");
 //        src: url('https://dl.dropboxusercontent.com/s/ehsz0t6dgq01bt5/yojo.ttf') format("Truetype");
