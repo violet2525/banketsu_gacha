@@ -1,10 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-<!--
-<script type='text/javascript' src='http://api.mojidepa.com/api/jsapi?k=a1e95b7d953b84c8f0c03a8a933f1169&i=1' charset='utf-8'>
-</script>
--->
     <script>
 /*      window.onload = function(){
           sekirei();
@@ -59,7 +55,7 @@
         cv.setAttribute("height",canvas_h);
         var cn = cv.getContext("2d");
         var img = new Image();
-        img.src = "https://doc-00-0c-docs.googleusercontent.com/docs/securesc/29nq559d8duo66e3qqtlvi6t5c3ipsbn/es5eiu7agi4pl9g2em3e0s95mbij5gne/1499860800000/10412770286022561160/10412770286022561160/0B_RUZ_LMQGUTQW05R2x3WXRCWkE?"
+        img.src = "start.png"
         img.onload = function(){
           cn.drawImage(img,0,0,canvas_w*2,canvas_h*2,0,0,canvas_w,canvas_h);
         }
@@ -80,7 +76,8 @@
     <style>
       @font-face {
       font-family: MyFont;
-        src: url('ignore/yojo.woff') format("woff");
+        src: url('font/yojo.ttf') format("truetype"),
+             url('font/TanukiMagic.ttf') format("truetype");
       }
       
       body{
@@ -89,8 +86,8 @@
     </style>
   </head>
   <body style="background:#ffff00;">
-    <p id="load">
-    はろーわーるど
+    <p id="load" style="font-size:100px;">
+    Hello わーるど
     </p>
 <canvas id="cvs">キャンバス</canvas>
 <!--
