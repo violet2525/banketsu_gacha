@@ -1,0 +1,9 @@
+﻿@charset "utf-8";
+@font-face {
+font-family: MyFont;
+    src: url('../font/yojo.woff') format("woff");
+}
+body{
+    background: #ff0000;
+    font-family: MyFont, serif;
+}

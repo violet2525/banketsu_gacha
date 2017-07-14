@@ -1,88 +1,21 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="font.css" type="text/css">
-    <script>
-      const canvas_w = 960;
-      const canvas_h = 540;
-      let w_flg = '';
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/font.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <script src="start.js"></script>
+    <style type="text/css">
 
-    window.addEventListener('load', load, false);
-    
-    function load(){
-      start();
-      //document.getElementById('cvs').addEventListener('click', senni, false);
-    var cv = document.getElementById('cvs');
-     cv.addEventListener('mouseup',function(e){
-        senni(cv, e);
-      }, false);
-    }
-    
-    //画面遷移
-    function senni(cv, e){
-      const cv_pos = cv.getBoundingClientRect();
-      const mX = e.pageX - cv_pos.left;
-      const mY = e.pageY - cv_pos.top;
-      if(w_flg == 'start'){
-        //スタート画面→鶺鴒台選択
-        if(mX >= 310 && mX <= 750 && mY >= 365 && mY <= 460){
-          sekirei();
-        }else{
-          window.alert(mX + ', ' + mY);
-        }
-      }else if(w_flg == 'sekirei'){
-        if (true){
-          //鶺鴒台→神代鶺鴒台
-        }else if(true){
-          //鶺鴒台→桜代鶺鴒台
-        }
-        start();    
-      }
-    }
 
-      //START
-      function start(){
-        w_flg = 'start';
-        var cv = document.getElementById("cvs");
-        cv.setAttribute("width",canvas_w);
-        cv.setAttribute("height",canvas_h);
-        var cn = cv.getContext("2d");
-        var img = new Image();
-        img.src = "start.png"
-        img.onload = function(){
-          cn.drawImage(img,0,0,canvas_w*2,canvas_h*2,0,0,canvas_w,canvas_h);
-        }
-      }
-      
-      //鶺鴒台選択
-      function sekirei(){
-        w_flg = 'sekirei';
-        var cv = document.getElementById("cvs");
-        cv.setAttribute("width",canvas_w);
-        cv.setAttribute("height",canvas_h);
-        var cn = cv.getContext("2d");
-        cn.font = "18px 'ＭＳ Ｐゴシック'"
-        cn.fillText("鶺鴒台選択",100,100);
-      }
 
-    </script>
-    <style>
-      
-      body{
-        font-family: MyFont, serif;
-      }    
     </style>
   </head>
-  <body style="background:#ffffff;">
+  <body>
     <p id="load" style="font-size:100px;">
     はろーわーるど
     </p>
-<canvas id="cvs">キャンバス</canvas>
-<!--
-//          src: url('https://cldup.com/suPs57RV6l.ttf') format("TrueType");
-//        src: url('https://dl.dropboxusercontent.com/s/ehsz0t6dgq01bt5/yojo.ttf') format("Truetype");
-  <img src="https://doc-00-0c-docs.googleusercontent.com/docs/securesc/29nq559d8duo66e3qqtlvi6t5c3ipsbn/es5eiu7agi4pl9g2em3e0s95mbij5gne/1499860800000/10412770286022561160/10412770286022561160/0B_RUZ_LMQGUTQW05R2x3WXRCWkE?" />
--->
+    <canvas id="cvs">キャンバス</canvas>
   </body>
 </html>
 
