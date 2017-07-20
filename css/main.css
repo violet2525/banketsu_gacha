@@ -1,4 +1,20 @@
 body{
     background: #ffffff;
-    font-family: MyFont, serif;
+    font-family: san-serif;
+}
+
+#rireki{
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    width: 480px;
+    padding: 10px;
+}
+
+#faq{
+    position: absolute;
+    top: 600px;
+    left: 480px;
+    width: 480px;
+    padding: 10px;
 }

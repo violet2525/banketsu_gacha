@@ -322,8 +322,8 @@ let black = function(){
 //画面遷移
 var senni = function(cv, e){
   const cv_pos = cv.getBoundingClientRect();
-  const mX = e.pageX - cv_pos.left;
-  const mY = e.pageY - cv_pos.top;
+  const mX = e.clientX - cv_pos.left;
+  const mY = e.clientY - cv_pos.top;
   if(page.now == 'start'){
     //スタート画面→鶺鴒台選択
     if(mX >= buttons.start.x && mX <= buttons.start.x + buttons.start.w && mY >= buttons.start.y && mY <= buttons.start.y + buttons.start.h){
@@ -373,8 +373,8 @@ var senni = function(cv, e){
 //マウスポインタ
 let pointer = function(cv, e){
   const cv_pos = cv.getBoundingClientRect();
-  const mX = e.pageX - cv_pos.left;
-  const mY = e.pageY - cv_pos.top;
+  const mX = e.clientX - cv_pos.left;
+  const mY = e.clientY - cv_pos.top;
   if(page.now == 'start'){
     //スタート画面→鶺鴒台選択
     if(mX >= buttons.start.x && mX <= buttons.start.x + buttons.start.w && mY >= buttons.start.y && mY <= buttons.start.y + buttons.start.h){
@@ -409,6 +409,8 @@ let pointer = function(cv, e){
       document.body.style.cursor = "pointer";
     }else if(mX >= buttons.tweet.x && mX <= buttons.tweet.x + buttons.tweet.w && mY >= buttons.tweet.y && mY <= buttons.tweet.y + buttons.tweet.h){
       document.body.style.cursor = "pointer";
+    }else if(mX >= buttons.again.x && mX <= buttons.again.x + buttons.again.w && mY >= buttons.again.y && mY <= buttons.again.y + buttons.again.h){
+      document.body.style.cursor = "pointer";
     }else{
       document.body.style.cursor = "";      
     }
@@ -420,6 +422,7 @@ let pointer = function(cv, e){
 //初回ロード時
 var load = function(){
 //  tweet();
+  rireki();
   start();
 //  result("銀","ウラシマタロウ");
 //  tableReq();
@@ -455,10 +458,37 @@ var tableReq = function(rair){
   document.body.appendChild(script);  
 };
 
-function tweet(chara, misumaru){
-  var result = chara + "が産まれました（消費御統珠：" + misumaru + "個）\nhttps://banketsu-gacha.netlify.com/";
-  var win = window.open("https://twitter.com/intent/tweet?text="+ encodeURIComponent(result));
+let tweet = function(chara, misumaru){
+  const result = chara + "が産まれました（消費御統珠：" + misumaru + "個）\nhttps://banketsu-gacha.netlify.com/";
+  const win = window.open("https://twitter.com/intent/tweet?text="+ encodeURIComponent(result));
 //  location.href = "https://twitter.com/intent/tweet?text="+ encodeURIComponent(result);
+}
+
+let rireki = function(){
+  let script = document.createElement('script');
+  script.src = "https://script.google.com/macros/s/AKfycbwvIQKVN-kbFqhcRSA5HVojF1hJzjv0NG0odkZiuiiqWkUBm_E/exec?callback=callbackFunction&sedai=r";
+  window.callbackFunction = function(data) {
+    //（コールバックされた後の処理）
+    document.getElementById("date01").innerText = data['内容'][0];
+    document.getElementById("date02").innerText = data['内容'][1];
+    document.getElementById("date03").innerText = data['内容'][2];
+    document.getElementById("disc01").innerText = setDate(data['日付'][0]);
+    document.getElementById("disc02").innerText = setDate(data['日付'][1]);
+    document.getElementById("disc03").innerText = setDate(data['日付'][2]);
+    //console.log(data);
+  }
+  document.body.appendChild(script);  
+}
+
+let setDate = function(date){
+  if(date == ''){
+    return "";
+  }
+  const ymd = new Date(date);
+  const yyyy = ymd.getFullYear();
+  const mm = ymd.getMonth() + 1;
+  const dd = ymd.getDate();
+  return yyyy + '/' + mm + '/' + dd;
 }
 
 }());
