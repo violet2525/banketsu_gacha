@@ -423,7 +423,7 @@ var tableReq = function(rair){
   let script = document.createElement('script');
   let sedai = '';
   //世代
-  if(page.now == 'sindai'){
+  if(page.now == 'seki_sindai'){
     sedai = 'o';
   }else{
     sedai = 's';
