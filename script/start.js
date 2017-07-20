@@ -62,7 +62,15 @@ let buttons = {
   }
 , tweet: {
     font: "50px MyFont"
-  , align: "center"
+  , align: "right"
+  , x: 0
+  , y: 0
+  , h: 0
+  , w: 0
+  }
+, again: {
+    font: "50px MyFont"
+  , align: "left"
   , x: 0
   , y: 0
   , h: 0
@@ -258,7 +266,8 @@ let result = function(rair, chara){
   cn.fillText("がうまれました", canvas_w/2, canvas_h/3+150);
   buttons =  setButten(buttons, "back", "もどる", 0, canvas_h-20);
   buttons =  setButten(buttons, "title", "たいとる", canvas_w, canvas_h-20);
-  buttons =  setButten(buttons, "tweet", "つぶやく", canvas_w/2, canvas_h/5*4);
+  buttons =  setButten(buttons, "again", "もういっかい", 150, canvas_h/5*4);
+  buttons =  setButten(buttons, "tweet", "つぶやく", canvas_w-150, canvas_h/5*4);
   stone(misumaru);
 };
 
@@ -342,16 +351,21 @@ var senni = function(cv, e){
     //ガチャ結果
     if(mX >= buttons.back.x && mX <= buttons.back.x + buttons.back.w && mY >= buttons.back.y && mY <= buttons.back.y + buttons.back.h){
       //鶺鴒台にもどる
-      if (page.sekirei == 'sindai'){
-        seki_sindai();
-      }else{
-        seki_oudai();
-      }
+      sekirei();
     }else if(mX >= buttons.title.x && mX <= buttons.title.x + buttons.title.w && mY >= buttons.title.y && mY <= buttons.title.y + buttons.title.h){
       //タイトルにもどる
       start();
     }else if(mX >= buttons.tweet.x && mX <= buttons.tweet.x + buttons.tweet.w && mY >= buttons.tweet.y && mY <= buttons.tweet.y + buttons.tweet.h){
       tweet(character, misumaru);
+    }else if(mX >= buttons.again.x && mX <= buttons.again.x + buttons.again.w && mY >= buttons.again.y && mY <= buttons.again.y + buttons.again.h){
+      gacha_effect();
+/*      if (page.sekirei == 'sindai'){
+        seki_sindai();
+      }else{
+        seki_oudai();
+      }
+*/    }else{
+
     } 
   }
 };
@@ -423,7 +437,7 @@ var tableReq = function(rair){
   let script = document.createElement('script');
   let sedai = '';
   //世代
-  if(page.now == 'seki_sindai'){
+  if(page.sekirei == 'sindai'){
     sedai = 'o';
   }else{
     sedai = 's';
