@@ -459,7 +459,8 @@ var tableReq = function(rair){
 };
 
 let tweet = function(chara, misumaru){
-  const result = chara + "が産まれました（消費御統珠：" + misumaru + "個）\nhttps://banketsu-gacha.netlify.com/";
+  const cname = chara.replace("おうだい", "桜代").replace("そうだい", "双代");
+  const result = cname + "が産まれました（消費御統珠：" + misumaru + "個）\nhttps://banketsu-gacha.netlify.com/";
   const win = window.open("https://twitter.com/intent/tweet?text="+ encodeURIComponent(result));
 //  location.href = "https://twitter.com/intent/tweet?text="+ encodeURIComponent(result);
 }
