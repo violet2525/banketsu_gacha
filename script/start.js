@@ -280,7 +280,7 @@ let stone = function(misumaru){
   cn.textAlign = "left";
   cn.fillText("みすまる", 250, canvas_h-20);
   cn.textAlign = "right";
-  cn.fillText(misumaru + " こ", canvas_w - 250, canvas_h-20);
+  cn.fillText(misumaru + "こ", canvas_w - 250, canvas_h-20);
 }
 
 //銀
